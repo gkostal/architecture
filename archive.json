@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-06-05T23:24:07.792751+00:00",
+  "timestamp": "2020-06-09T13:41:17.565933+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -1373,9 +1373,17 @@
       "labels": [],
       "body": "To establish trust in a Verifier, Section 7 states that a Relying Party may require \"information\" about the Verifier:\r\n>Or, for a stronger level of security, the Relying Party might require that the Verifier itself provide information about itself that the Relying Party can use to assess the trustworthiness of the Verifier before accepting its Attestation Results\r\n\r\nSection 7 states that an Endorser or Verifier Owner may establish trust in a Verifier by treating it as an Attester:\r\n>The Endorser and Verifier Owner may need to trust the Verifier before giving the Endorsement and Appraisal Policy to it. Such trust can also be established directly or indirectly, implicitly or explicitly. One explicit way to establish such trust may be the Verifier first acts as an Attester and creates Evidence about itself to be consumed by the Endorser and/or Verifier Owner as the Relying Parties. If it is accepted as trustworthy, then they can provide Endorsements and Appraisal Policies that enable it to act as a Verifier.\r\n\r\n**Topic 1: spec content.**  Why the differing levels of specifics?  Is it intentional that the methods to establish trust is different for { Endorser, Verified Owner } and the Relying Party?  I believe that the Relying Party may require Evidence from the Verifier to trust it, in fact, this is precisely how the Microsoft Azure Attestation Service (a Verifier) has been designed and implemented.\r\n\r\n**Topic 2: conceptual dataflow diagram.**  The conceptual dataflow diagram in the architecture spec does not currently reflect that the Verifier may also be an Attester and then share Evidence with the Endorser, Verifier Owner and Relying Party.  Should it be updated?  Or have a 2nd more complex diagram?\r\n\r\n**Topic 3: EAT.**  If accurate, I'd like to see a clear acknowledgement that the Verifier may need to act as an Attester for the Relying Party since I'd like to then see specifically how the IETF EAT specification covers this circumstance.  In other words, for an EAT that represents an AttestationResult, would the Evidence for the Verifier be embedded or discovered?  If embedded, how are submods distinguished for the Verifier's Evidence versus the AttestationResult's embedded claims, including nested EAT's?",
       "createdAt": "2020-06-05T16:14:39Z",
-      "updatedAt": "2020-06-05T16:14:39Z",
+      "updatedAt": "2020-06-08T17:33:43Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See inline NMS>\r\n\r\nFrom: gkostal <notifications@github.com>\r\nReply-To: ietf-rats-wg/architecture <reply@reply.github.com>\r\nDate: Friday, June 5, 2020 at 9:15 AM\r\nTo: ietf-rats-wg/architecture <architecture@noreply.github.com>\r\nCc: Subscribed <subscribed@noreply.github.com>\r\nSubject: [ietf-rats-wg/architecture] Trust Model: Relying Party may require Verifier to act as Attester (#92)\r\n\r\n\r\nTo establish trust in a Verifier, Section 7 states that a Relying Party may require \"information\" about the Verifier:\r\n\r\nOr, for a stronger level of security, the Relying Party might require that the Verifier itself provide information about itself that the Relying Party can use to assess the trustworthiness of the Verifier before accepting its Attestation Results\r\n\r\nSection 7 states that an Endorser or Verifier Owner may establish trust in a Verifier by treating it as an Attester:\r\n\r\nThe Endorser and Verifier Owner may need to trust the Verifier before giving the Endorsement and Appraisal Policy to it. Such trust can also be established directly or indirectly, implicitly or explicitly. One explicit way to establish such trust may be the Verifier first acts as an Attester and creates Evidence about itself to be consumed by the Endorser and/or Verifier Owner as the Relying Parties. If it is accepted as trustworthy, then they can provide Endorsements and Appraisal Policies that enable it to act as a Verifier.\r\n\r\nTopic 1: spec content. Why the differing levels of specifics? Is it intentional that the methods to establish trust is different for { Endorser, Verified Owner } and the Relying Party? I believe that the Relying Party may require Evidence from the Verifier to trust it, in fact, this is precisely how the Microsoft Azure Attestation Service (a Verifier) has been designed and implemented.\r\n\r\nNMS> I don\u2019t think it is the intent of the arch doc to say that it expects different entities should use different techniques to establish initial trust. The trust model assumes, however, the various role interactions have pre-requisite trust relationships. It isn\u2019t a goal of the architecture to define how to bootstrap or establish pre-requisite trust relationships. Some suggestions are provided, but maybe it makes sense to discuss it in one part of the document only?\r\n\r\nTopic 2: conceptual dataflow diagram. The conceptual dataflow diagram in the architecture spec does not currently reflect that the Verifier may also be an Attester and then share Evidence with the Endorser, Verifier Owner and Relying Party. Should it be updated? Or have a 2nd more complex diagram?\r\n\r\nNMS> The conceptual model is intended to present a canonical model (one that is simplified) and leave it up to targeted designs to determine how best to apply more complex interactions. Nevertheless, the case for using Attestation as a way to establish pre-requisite trust between the Roles may not be the best example of \u201ccomplex Role interactions\u201d since the assumption/presumption that pre-requisite trust between Roles / entities has already been addressed (somehow). Rather, more interesting / complex interactions might be something like the composite device where a local Verifier appraises some of the Sub-Attesters\u2019 Evidence but not all of it. In this case there is both local and remote Verifiers. The remote Verifier is implementing the Relying Party role to the local Verifier\u2019s Attestation Results. It may be generating its own Attestation Results and combining both sets of Attestation Results for consumption by other Relying Parties. We don\u2019t say the remote Verifier isn\u2019t a Relying Party; rather we say the entity that hosts the remote Verifier may also host a Relying Party role (to the local Verifier).\r\n\r\nThere has been continued discussion about the differences between a role and the entity that implements / hosts the role(s). Often it is convenient to refer to the entity using the Role name, but that becomes confusing if the entity hosts multiple roles. I think the architecture design team is hopeful that drafts will be careful to distinguish the differences as they can draw upon use case context to name entities according to use case intuition rather than by using Role names.\r\n\r\nTopic 3: EAT. If accurate, I'd like to see a clear acknowledgement that the Verifier may need to act as an Attester for the Relying Party since I'd like to then see specifically how the IETF EAT specification covers this circumstance. In other words, for an EAT that represents an AttestationResult, would the Evidence for the Verifier be embedded or discovered? If embedded, how are submods distinguished for the Verifier's Evidence versus the AttestationResult's embedded claims, including nested EAT's?\r\n\r\nNMS> The EAT draft is primarily defining a set of claims. Although, philosophically signed (integrity protected claims) are more correctly referred to as Evidence, Endorsement or Attestation Results (because of who signed them and what Role they were playing when signing them). The architecture thinks (unsigned) claims could be expressions that are suitable as Evidence, Endorsements or Attestation Results. The context of how claims are asserted determines which Role Message term is best.\r\n\r\nI sorta think the example in Topic 3 conflates pre-requisite trust establishment between entities performing RATS Roles with the operational use case of Attesting a pledge device. Recursive application of RATS architecture is possible, as a way to bootstrap a deployment of RATS Roles. But it seems wrong to conflate the recursion to somehow define the Roles differently.\r\n\r\n\u2014\r\nYou are receiving this because you are subscribed to this thread.\r\nReply to this email directly, view it on GitHub<https://github.com/ietf-rats-wg/architecture/issues/92>, or unsubscribe<https://github.com/notifications/unsubscribe-auth/ABPMCSH56ORV5YNUXR7OF4LRVEKX5ANCNFSM4NUDAUOQ>.\r\n",
+          "createdAt": "2020-06-08T17:33:42Z",
+          "updatedAt": "2020-06-08T17:33:42Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -8958,7 +8966,7 @@
       "labels": [],
       "body": "Sry, for the included conflict to references. Should have checked master first....",
       "createdAt": "2020-05-12T13:50:37Z",
-      "updatedAt": "2020-05-26T14:04:45Z",
+      "updatedAt": "2020-06-08T20:11:52Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "2a8eec68b3de946ddb8840f1776c54cd72646c96",
@@ -9710,6 +9718,44 @@
               "body": "why not just say \"using the latest Appraisal Policy for the latest Evidence\"",
               "createdAt": "2020-05-19T11:42:24Z",
               "updatedAt": "2020-05-19T11:42:25Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NTc0Mzk4",
+          "commit": {
+            "abbreviatedOid": "49750bd"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-08T19:58:00Z",
+          "updatedAt": "2020-06-08T20:11:52Z",
+          "comments": [
+            {
+              "originalPosition": 60,
+              "body": "Stick to upper case Evidence convention. Since we defined Evidence as Claims that are signed (protected) we don't have to restate it here.",
+              "createdAt": "2020-06-08T19:58:00Z",
+              "updatedAt": "2020-06-08T20:11:52Z"
+            },
+            {
+              "originalPosition": 57,
+              "body": "Intuitively, recentness is the time of claims collection or the time of appraisal. Do we need more than this?",
+              "createdAt": "2020-06-08T19:59:24Z",
+              "updatedAt": "2020-06-08T20:11:52Z"
+            },
+            {
+              "originalPosition": 23,
+              "body": "Intuitively freshness is the time since the request was made and the response was received. Do we need more than this?",
+              "createdAt": "2020-06-08T20:03:39Z",
+              "updatedAt": "2020-06-08T20:11:52Z"
+            },
+            {
+              "originalPosition": 70,
+              "body": "I think the uniqueness property is addressed by the credential used to authenticate the Attester to the Verifier (and subsequently used to integrity protect the Evidence messages). If the credential uniquely identifies the Attester then the Evidence is unique to the session to which the authentication applies. \r\nIf the credential is a group credential (e.g. EPID / DAA) then the uniqueness is to the members of the group. We have other sections on Privacy and authentication of the endpoint. (Or maybe I'm wrong about the latter). But it might make sense to have a section on \"Authentication of the Endpoint\" as the way to talk about security properties of uniqueness / non-uniqueness?",
+              "createdAt": "2020-06-08T20:11:40Z",
+              "updatedAt": "2020-06-08T20:11:52Z"
             }
           ]
         }
@@ -10512,7 +10558,7 @@
       "labels": [],
       "body": "This commit slightly changes the Freshness section to reflect the\r\noutcome of the discussion around PR #87.  (Hopefully I've managed to\r\ncapture the gist of Henk's thinking without disrupting too much the\r\nexisting flow.)\r\n\r\nTL;DR\r\n\r\nThe key change here is the removal of reply protection as a goal in\r\nitself.  The section now states clearly that the overall goal is instead\r\nthe identification of the point in time when attestation claims have\r\nbeen signed and/or generated so that a freshness policy can be applied.\r\nIn this perspective, the fundamental property provided by a nonce-based\r\nscheme with regards to freshness is its ability to lock the requester's\r\nclock to the underlying protocol transaction, thus indirectly\r\nestablishing the epoch of the attestation / verification event.  By\r\nmaking the nonce unique and non-predictable, the timeline locking cannot\r\nbe subverted, which provides anti-replay.  However, that is a nice\r\nside-effect rather than the primary goal.\r\n\r\nThis commit also adds some precision around the nonce and clock\r\nproperties - unpredictability and trustworthiness respectively.",
       "createdAt": "2020-06-01T16:05:24Z",
-      "updatedAt": "2020-06-02T15:49:03Z",
+      "updatedAt": "2020-06-08T19:27:07Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "c47c3538e39d8e4fef5311dd8b1eb912f05d57d8",
@@ -10967,6 +11013,114 @@
               "updatedAt": "2020-06-02T15:49:03Z"
             }
           ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NTI0NTIz",
+          "commit": {
+            "abbreviatedOid": "7c022f8"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-08T18:54:37Z",
+          "updatedAt": "2020-06-08T18:54:37Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "\"could not have\"",
+              "createdAt": "2020-06-08T18:54:37Z",
+              "updatedAt": "2020-06-08T18:54:37Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NTMzMjc1",
+          "commit": {
+            "abbreviatedOid": "7c022f8"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-08T19:00:50Z",
+          "updatedAt": "2020-06-08T19:00:51Z",
+          "comments": [
+            {
+              "originalPosition": 57,
+              "body": "\"also\", \"if wanted\", \"of Evidence\", \"value\" are not needed.\r\n\"allow distinguishing\" change to \"distinguish\" ",
+              "createdAt": "2020-06-08T19:00:50Z",
+              "updatedAt": "2020-06-08T19:00:51Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NTM0MDg5",
+          "commit": {
+            "abbreviatedOid": "7c022f8"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-08T19:01:56Z",
+          "updatedAt": "2020-06-08T19:27:07Z",
+          "comments": [
+            {
+              "originalPosition": 58,
+              "body": "\"The clock's trustworthiness\" - grammar.",
+              "createdAt": "2020-06-08T19:01:56Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 62,
+              "body": "\"the Verifier (for Evidence), or the Relying Party (for Attestation Results).\"",
+              "createdAt": "2020-06-08T19:03:09Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 66,
+              "body": "Replace \"This\" with \"Timekeeping\" ? ",
+              "createdAt": "2020-06-08T19:07:12Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 69,
+              "body": "* The epoch applies to the entire claim set instead of a more granular association, and",
+              "createdAt": "2020-06-08T19:09:34Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 70,
+              "body": "* The time between the creation of Claims and the collection of Claims is indistinguishable.",
+              "createdAt": "2020-06-08T19:12:04Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 72,
+              "body": "\"Implicit and explicit timekeeping can be combined into hybrid mechanisms.",
+              "createdAt": "2020-06-08T19:14:58Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 74,
+              "body": "\"Second, a broadcast channel shared by all Roles (Attester, Verifier, etc.), the nonce-based approach...\"",
+              "createdAt": "2020-06-08T19:17:37Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 76,
+              "body": "\"It is important...\"",
+              "createdAt": "2020-06-08T19:18:16Z",
+              "updatedAt": "2020-06-08T19:27:07Z"
+            },
+            {
+              "originalPosition": 78,
+              "body": "This is not an example imo. \"For example, values generated at boot time might have been saved to secure storage until network connectivity is established to the remote Verifier and a nonce is obtained.\"",
+              "createdAt": "2020-06-08T19:25:15Z",
+              "updatedAt": "2020-06-08T19:27:08Z"
+            }
+          ]
         }
       ]
     },
@@ -10975,26 +11129,406 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NDI4ODQyODk5",
       "title": "Authors don't need to be in acknowledgments section",
       "url": "https://github.com/ietf-rats-wg/architecture/pull/93",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dthaler",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Wei Pan was added to the author list but wasn't removed from the\r\nAcknowledgements section at the time so now appears in both places.\r\nThis PR corrects that.\r\n\r\nSigned-off-by: Dave Thaler <dthaler@ntdev.microsoft.com>",
       "createdAt": "2020-06-05T23:23:57Z",
-      "updatedAt": "2020-06-05T23:24:02Z",
+      "updatedAt": "2020-06-09T13:40:59Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "a822b6e7805f594288c6003a776230fc4650fe6d",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "acknowledge",
       "headRefOid": "266c3f57bc69b999ba0dd40dfefc9403c0a10ed3",
+      "closedAt": "2020-06-09T13:40:51Z",
+      "mergedAt": "2020-06-09T13:40:51Z",
+      "mergedBy": "mcr",
+      "mergeCommit": {
+        "oid": "aa59bf45e07d0c2478afd19d7928a3105ec86785"
+      },
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yeah. I think this is yet another artifact and Dave is absolutely right here. Wei is already an \"acknowledged editor\" and therefore obviously does not has to be included in a potential ack section, apparently. ",
+          "createdAt": "2020-06-06T17:17:39Z",
+          "updatedAt": "2020-06-06T17:17:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI1ODg0Nzc1",
+          "commit": {
+            "abbreviatedOid": "266c3f5"
+          },
+          "author": "William-PanWei",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks for your careful observation.",
+          "createdAt": "2020-06-08T02:28:22Z",
+          "updatedAt": "2020-06-08T02:28:22Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NDk3NzQ3",
+          "commit": {
+            "abbreviatedOid": "266c3f5"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2020-06-08T18:19:01Z",
+          "updatedAt": "2020-06-08T18:19:01Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 94,
+      "id": "MDExOlB1bGxSZXF1ZXN0NDMwNTQ4Mzc3",
+      "title": "More description of Endorsements",
+      "url": "https://github.com/ietf-rats-wg/architecture/pull/94",
+      "state": "OPEN",
+      "author": "laurencelundblade",
+      "authorAssociation": "FIRST_TIME_CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses issue #65",
+      "createdAt": "2020-06-08T01:07:52Z",
+      "updatedAt": "2020-06-09T06:08:00Z",
+      "baseRepository": "ietf-rats-wg/architecture",
+      "baseRefName": "master",
+      "baseRefOid": "a822b6e7805f594288c6003a776230fc4650fe6d",
+      "headRepository": "laurencelundblade/architecture",
+      "headRefName": "master",
+      "headRefOid": "b2500a7d7015457dc93931231c5e133ef04eee39",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NDY4OTQ1",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-08T17:39:11Z",
+          "updatedAt": "2020-06-08T17:39:11Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "singular / plural agreement",
+              "createdAt": "2020-06-08T17:39:11Z",
+              "updatedAt": "2020-06-08T17:39:11Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NDcwMTAw",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "nedmsmith",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-08T17:40:47Z",
+          "updatedAt": "2020-06-08T18:15:59Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "Verifier isn't trying to \"trust attesters\" rather it is trying to Appraise Evidence. ",
+              "createdAt": "2020-06-08T17:40:48Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "I prefer wording closer to \"without Endorsements, Appraisal lacks expected values that can be compared with actual values resulting in an inconclusive Appraisal.\" ",
+              "createdAt": "2020-06-08T17:47:19Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 14,
+              "body": "Lines 741 - 743 seem redundant with regard to 739.",
+              "createdAt": "2020-06-08T17:48:15Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 16,
+              "body": "Suggested wording change \"Endorsements may include credentials for authenticating Evidence and identifying the Attesting Environment.\" (replaces lines 745 - 749)",
+              "createdAt": "2020-06-08T17:59:31Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 25,
+              "body": "Not sure lines 750 - 754 are necessary.",
+              "createdAt": "2020-06-08T18:00:26Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 27,
+              "body": "\"Endorsements may contain reference Claims and invariant Claims. Reference Claims are expected values that can be compared to actual values supplied as Evidence. Invariant Claims are static values that always apply regardless of Attester operational states.\" (replaces 756 - 758)",
+              "createdAt": "2020-06-08T18:07:52Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 31,
+              "body": "I don't think 760 - 761 are needed.",
+              "createdAt": "2020-06-08T18:08:34Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "762 - 763 is not stated correctly. Claims included in Attestation Results are no longer considered Endorsements. The section on Attestation Results should suffice as a definition of Attestation Results.",
+              "createdAt": "2020-06-08T18:10:19Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 36,
+              "body": "\"usually\" is incorrect stereotyping. Not sure 765 is adding useful information.",
+              "createdAt": "2020-06-08T18:11:36Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Lines 766 - 770 are exemplary in nature, but reads somewhat prescriptive. Suggest we re-look at \"Endorser\" section to see if it captures the use case intuition.",
+              "createdAt": "2020-06-08T18:14:07Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 48,
+              "body": "There is a section on message conveyance and on trust model. If these sections are not clear enough, maybe changes should be considered there?",
+              "createdAt": "2020-06-08T18:15:21Z",
+              "updatedAt": "2020-06-08T18:15:59Z"
+            },
+            {
+              "originalPosition": 50,
+              "body": "I'm not sure what this sentence is saying.",
+              "createdAt": "2020-06-08T18:15:46Z",
+              "updatedAt": "2020-06-08T18:16:00Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2NzE1OTQy",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "dthaler",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2020-06-09T00:49:01Z",
+          "updatedAt": "2020-06-09T00:54:36Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "I disagree with this phrasing.   Endorsements are essential for scalability.  If a Verifier owner has some means to establish trust in each Attester's hardware individually then it need not use an endorsement.  But typically that's not scalable.   Thus I prefer the original wording.",
+              "createdAt": "2020-06-09T00:49:02Z",
+              "updatedAt": "2020-06-09T00:54:36Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "I disagree with both the proposed line 739 and Ned's statement.  Endorsements don't contain \"expected values\", those are obtained (if at all) in addition to the \"endorsement\" per se, not as part of them.  (My point is just about terminology/definition, not about the protocol where they may typically come in the same protocol as endorsements.)",
+              "createdAt": "2020-06-09T00:50:38Z",
+              "updatedAt": "2020-06-09T00:54:36Z"
+            },
+            {
+              "originalPosition": 14,
+              "body": "Agree they're redundant, and I disagree with it for the same reason :)",
+              "createdAt": "2020-06-09T00:51:01Z",
+              "updatedAt": "2020-06-09T00:54:36Z"
+            },
+            {
+              "originalPosition": 25,
+              "body": "I agree with Ned this is too much protocol details, and may not apply to all implementations so isn't really architectural I think.  Same goes for lines 747-749 I would say.",
+              "createdAt": "2020-06-09T00:52:17Z",
+              "updatedAt": "2020-06-09T00:54:36Z"
+            },
+            {
+              "originalPosition": 33,
+              "body": "Agree with Ned.",
+              "createdAt": "2020-06-09T00:53:01Z",
+              "updatedAt": "2020-06-09T00:54:36Z"
+            },
+            {
+              "originalPosition": 43,
+              "body": "This implies conveyance via a secure protocol, which I disagree is a must.  As long as endorsements are signed, how they're conveyed is irrelevant... conveyance via an insecure protocol is fine.",
+              "createdAt": "2020-06-09T00:54:13Z",
+              "updatedAt": "2020-06-09T00:54:36Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODA2NTcw",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T05:50:51Z",
+          "updatedAt": "2020-06-09T05:50:51Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "The architecture needs to include the Verifier knows to trust the Attester, how it gets the key material on which the trust is based.  Since the only inputs are Endorsements and Policy, Endorsement seems the better line up.",
+              "createdAt": "2020-06-09T05:50:51Z",
+              "updatedAt": "2020-06-09T05:50:51Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODA3MDQ3",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T05:52:06Z",
+          "updatedAt": "2020-06-09T05:52:06Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "Well, yes, but if you don't trust the Attester to some degree, the Evidence is worthless. The sentence does depict that.",
+              "createdAt": "2020-06-09T05:52:06Z",
+              "updatedAt": "2020-06-09T05:52:06Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODA4MTA3",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T05:54:48Z",
+          "updatedAt": "2020-06-09T05:54:49Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "The Verifier has to have key material. It may also get implied or inferred claims, things it knows about the Attester that the Attester didn't tell it directly. From discussions with Henk and such, I believe both the key material and implied claims come in the form of Endorsements. Some may be known-good-values, but others may be things that are passed on the relying party.",
+              "createdAt": "2020-06-09T05:54:48Z",
+              "updatedAt": "2020-06-09T05:54:49Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODEwOTQy",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T06:01:46Z",
+          "updatedAt": "2020-06-09T06:01:47Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "I haven't seen the terms Reference and Invariant Claim before. They seem OK, but they seem synonymous with k-g-v or Reference Values. Are they?\r\n\r\nNote also that I see some of these as being passed through the Verifier to the Relying Party.  I described this elaborately here: https://mailarchive.ietf.org/arch/msg/rats/VS-pAO2Io33EagbtpLutIrnUpAQ/\r\n",
+              "createdAt": "2020-06-09T06:01:47Z",
+              "updatedAt": "2020-06-09T06:01:47Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODExMzc2",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T06:02:55Z",
+          "updatedAt": "2020-06-09T06:02:55Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "Seemed like the term Endorser was eliminated. I was trying to work around that. ",
+              "createdAt": "2020-06-09T06:02:55Z",
+              "updatedAt": "2020-06-09T06:02:55Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODEyMTA0",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T06:04:49Z",
+          "updatedAt": "2020-06-09T06:04:50Z",
+          "comments": [
+            {
+              "originalPosition": 43,
+              "body": "I used the term \"secure way\" to cover signing and even an in person delivery of flash drive. (I have actually done this with VeriSign root). ",
+              "createdAt": "2020-06-09T06:04:50Z",
+              "updatedAt": "2020-06-09T06:04:50Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODEyNDU2",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T06:05:30Z",
+          "updatedAt": "2020-06-09T06:05:30Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "Was going to review (and probably comment) on Trust Model next. :-)",
+              "createdAt": "2020-06-09T06:05:30Z",
+              "updatedAt": "2020-06-09T06:05:30Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI2ODEzNDc0",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "laurencelundblade",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2020-06-09T06:08:00Z",
+          "updatedAt": "2020-06-09T06:08:00Z",
+          "comments": [
+            {
+              "originalPosition": 50,
+              "body": "I didn't write it. It's what was in the section before. Shows up in the diff because I split it into a separate paragraph. I'm a bit unsure about it myself. ",
+              "createdAt": "2020-06-09T06:08:00Z",
+              "updatedAt": "2020-06-09T06:08:00Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
