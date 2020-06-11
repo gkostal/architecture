@@ -171,13 +171,13 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
    Amongst other things, this document is about trust and
-   trustworthiness.  Trust is a decision being made.  Trustworthiness is
-   a quality that is assessed via evidence created.  This is a subtle
-   difference and being familiar with the difference is crucial for
-   using this document.  Additionally, the concepts of freshness and
-   trust relationships with respect to RATS are elaborated on to enable
-   implementers in order to choose appropriate solutions to compose
-   their Remote Attestation Procedures.
+   trustworthiness.  To trust is a decision that spans beyond the
+   technical assertions.  Trustworthiness is a quality that is assessed
+   via evidence.  This is a subtle difference and being familiar with
+   the difference is crucial for using this document.  Additionally, the
+   concepts of freshness and trust relationships with respect to RATS
+   are elaborated on to enable implementers in order to choose
+   appropriate solutions to compose their Remote Attestation Procedures.
 
 2.  Terminology
 
@@ -248,15 +248,16 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    that collectively cover all the functionality required in the
    architecture.
 
-   Each use case includes a description, and a summary of what an
-   Attester and a Relying Party refer to in the use case.
+   Each use case includes a description followed by a summary of the
+   Attester and a Relying Party roles.
 
 3.1.  Network Endpoint Assessment
 
-   Network operators want a trustworthy report of identity and version
-   of information of the hardware and software on the machines attached
-   to their network, for purposes such as inventory, auditing, and/or
-   logging.  The network operator may also want a policy by which full
+   Network operators want a trustworthy report that includes identity
+   and version of information of the hardware and software on the
+   machines attached to their network, for purposes such as inventory,
+   audit, anomaly detection, record maintenance and/or trending reports
+   (logging).  The network operator may also want a policy by which full
    access is only granted to devices that meet some definition of
    health, and so wants to get claims about such information and verify
    their validity.  Remote attestation is desired to prevent vulnerable
@@ -265,15 +266,14 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
    Typically, solutions start with a specific component (called a "Root
    of Trust") that provides device identity and protected storage for
-   measurements.  These components perform a series of measurements, and
-   express this with Evidence as to the hardware and firmware/software
-   that is running.
+   measurements.  The system components perform a series of measurements
+   that may be signed by the Root of Trust, considered as Evidence about
+   the hardware, firmware, BIOS, software, etc. that is running.
 
    Attester:  A device desiring access to a network
 
    Relying Party:  A network infrastructure device such as a router,
       switch, or access point
-
 
 
 
@@ -284,11 +284,11 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 3.2.  Confidential Machine Learning (ML) Model Protection
 
-   A device manufacturer wants to protect its intellectual property in
-   terms of the ML model it developed and that runs in the devices that
-   its customers purchased, and it wants to prevent attackers,
-   potentially including the customer themselves, from seeing the
-   details of the model.
+   A device manufacturer wants to protect its intellectual property.
+   This is primarily the ML model it developed and runs in the devices
+   purchased by its customers.  The goals for the protection include
+   preventing attackers, potentially the customer themselves, from
+   seeing the details of the model.
 
    This typically works by having some protected environment in the
    device attest to some manufacturer service.  If remote attestation
@@ -306,8 +306,10 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    This is a generalization of the ML model use case above, where the
    data can be any highly confidential data, such as health data about
    customers, payroll data about employees, future business plans, etc.
-   Attestation is desired to prevent leaking data to compromised
-   devices.
+   An assessment of system integrity is made against a set of policies
+   to evaluate the state of a system using attestations for the system
+   requesting data.  Attestation is desired to prevent leaking data to
+   compromised devices.
 
    Attester:  An entity desiring to retrieve confidential data
 
@@ -328,8 +330,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    requesters that are within policy.
 
    Attester:  A device or application wishing to control physical
-      equipment
-
 
 
 
@@ -337,6 +337,8 @@ Birkholz, et al.        Expires 13 December 2020                [Page 6]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
+
+      equipment
 
    Relying Party:  A device or application connected to potentially
       dangerous physical equipment (hazardous chemical processing,
@@ -381,8 +383,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
    Figure 1 depicts the data that flows between different roles,
    independent of protocol or use case.
-
-
 
 
 
