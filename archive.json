@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-06-09T13:41:17.565933+00:00",
+  "timestamp": "2020-06-11T13:29:04.867646+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -11199,7 +11199,7 @@
       "labels": [],
       "body": "Addresses issue #65",
       "createdAt": "2020-06-08T01:07:52Z",
-      "updatedAt": "2020-06-09T06:08:00Z",
+      "updatedAt": "2020-06-09T13:44:09Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "a822b6e7805f594288c6003a776230fc4650fe6d",
@@ -11525,6 +11525,26 @@
               "body": "I didn't write it. It's what was in the section before. Shows up in the diff because I split it into a separate paragraph. I'm a bit unsure about it myself. ",
               "createdAt": "2020-06-09T06:08:00Z",
               "updatedAt": "2020-06-09T06:08:00Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDI3MTYyOTEz",
+          "commit": {
+            "abbreviatedOid": "b2500a7"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I don't see this as improving the text.",
+          "createdAt": "2020-06-09T13:42:32Z",
+          "updatedAt": "2020-06-09T13:44:09Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "I prefer the old text.",
+              "createdAt": "2020-06-09T13:42:32Z",
+              "updatedAt": "2020-06-09T13:44:09Z"
             }
           ]
         }
