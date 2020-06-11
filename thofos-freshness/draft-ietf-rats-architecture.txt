@@ -1363,10 +1363,9 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    then signed and included along with the Claims in the Evidence or
    Attestation Result.  After checking that the sent and received nonces
    are the same, the appraising entity knows that the Claims were signed
-   after the nonce was generated, effectively locking its clock to the
-   produced payload.  This allows associating a "rough" epoch to the
-   Evidence or Attestation Result.  In this case the epoch is said to be
-   rough because:
+   after the nonce was generated.  This allows associating a "rough"
+   epoch to the Evidence or Attestation Result.  In this case the epoch
+   is said to be rough because:
 
    *  The epoch applies to the entire claim set instead of a more
       granular association, and
@@ -1394,6 +1393,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    established to the remote Verifier and a nonce is obtained.
 
    A more detailed discussion with examples appears in Section 16.
+
 
 
 
