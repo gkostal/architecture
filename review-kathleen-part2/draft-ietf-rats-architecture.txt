@@ -213,10 +213,10 @@ Internet-Draft              RATS Arch & Terms                  June 2020
       help Verifiers appraise the authenticity of Evidence
 
    Evidence:  A set of information about an Attester that is to be
-      appraised by a Verifier
+      appraised by a Verifier.  Evidence may include configuration data,
+      measurements, telemetry, or inferences.
 
    Relying Party:  A role performed by an entity that depends on the
-
 
 
 
