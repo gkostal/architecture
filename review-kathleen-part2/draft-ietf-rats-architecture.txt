@@ -197,10 +197,10 @@ Internet-Draft              RATS Arch & Terms                  June 2020
       including information about an Attester, where the Verifier
       vouches for the validity of the results
 
-   Attester:  An entity (typically a device), whose Evidence must be
-      appraised in order to infer the extent to which the Attester is
-      considered trustworthy, such as when deciding whether it is
-      authorized to perform some operation
+   Attester:  a role performed by an entity (typically a device), whose
+      Evidence must be appraised in order to infer the extent to which
+      the Attester is considered trustworthy, such as when deciding
+      whether it is authorized to perform some operation
 
    Claim:  A piece of asserted information, often in the form of a name/
       value pair.  (Compare /claim/ in [RFC7519])
