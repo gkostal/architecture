@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 13 December 2020                                      Microsoft
+Expires: 18 December 2020                                      Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                            11 June 2020
+                                                            16 June 2020
 
 
                Remote Attestation Procedures Architecture
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 1]
+Birkholz, et al.        Expires 18 December 2020                [Page 1]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -63,7 +63,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 December 2020.
+   This Internet-Draft will expire on 18 December 2020.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 2]
+Birkholz, et al.        Expires 18 December 2020                [Page 2]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -165,7 +165,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 3]
+Birkholz, et al.        Expires 18 December 2020                [Page 3]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -221,7 +221,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 4]
+Birkholz, et al.        Expires 18 December 2020                [Page 4]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -277,7 +277,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 5]
+Birkholz, et al.        Expires 18 December 2020                [Page 5]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -306,8 +306,8 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    This is a generalization of the ML model use case above, where the
    data can be any highly confidential data, such as health data about
    customers, payroll data about employees, future business plans, etc.
-   An assessment of system integrity is made against a set of policies
-   to evaluate the state of a system using attestations for the system
+   An assessment of system state is made against a set of policies to
+   evaluate the state of a system using attestations for the system
    requesting data.  Attestation is desired to prevent leaking data to
    compromised devices.
 
@@ -333,7 +333,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 6]
+Birkholz, et al.        Expires 18 December 2020                [Page 6]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -389,7 +389,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 7]
+Birkholz, et al.        Expires 18 December 2020                [Page 7]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -445,7 +445,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 8]
+Birkholz, et al.        Expires 18 December 2020                [Page 8]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -501,7 +501,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 9]
+Birkholz, et al.        Expires 18 December 2020                [Page 9]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -557,7 +557,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 10]
+Birkholz, et al.        Expires 18 December 2020               [Page 10]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -613,7 +613,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 11]
+Birkholz, et al.        Expires 18 December 2020               [Page 11]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -669,7 +669,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 12]
+Birkholz, et al.        Expires 18 December 2020               [Page 12]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -725,7 +725,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 13]
+Birkholz, et al.        Expires 18 December 2020               [Page 13]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -781,7 +781,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 14]
+Birkholz, et al.        Expires 18 December 2020               [Page 14]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -837,7 +837,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 15]
+Birkholz, et al.        Expires 18 December 2020               [Page 15]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -893,7 +893,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 16]
+Birkholz, et al.        Expires 18 December 2020               [Page 16]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -949,7 +949,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 17]
+Birkholz, et al.        Expires 18 December 2020               [Page 17]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1005,7 +1005,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 18]
+Birkholz, et al.        Expires 18 December 2020               [Page 18]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1061,7 +1061,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 19]
+Birkholz, et al.        Expires 18 December 2020               [Page 19]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1117,7 +1117,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 20]
+Birkholz, et al.        Expires 18 December 2020               [Page 20]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1173,7 +1173,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 21]
+Birkholz, et al.        Expires 18 December 2020               [Page 21]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1229,7 +1229,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 22]
+Birkholz, et al.        Expires 18 December 2020               [Page 22]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1285,7 +1285,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 23]
+Birkholz, et al.        Expires 18 December 2020               [Page 23]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1341,7 +1341,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 24]
+Birkholz, et al.        Expires 18 December 2020               [Page 24]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1397,7 +1397,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 25]
+Birkholz, et al.        Expires 18 December 2020               [Page 25]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1453,7 +1453,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 26]
+Birkholz, et al.        Expires 18 December 2020               [Page 26]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1509,7 +1509,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 27]
+Birkholz, et al.        Expires 18 December 2020               [Page 27]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1565,7 +1565,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 28]
+Birkholz, et al.        Expires 18 December 2020               [Page 28]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1621,7 +1621,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 29]
+Birkholz, et al.        Expires 18 December 2020               [Page 29]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1677,7 +1677,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 30]
+Birkholz, et al.        Expires 18 December 2020               [Page 30]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1733,7 +1733,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 31]
+Birkholz, et al.        Expires 18 December 2020               [Page 31]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1789,7 +1789,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 32]
+Birkholz, et al.        Expires 18 December 2020               [Page 32]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1805,9 +1805,9 @@ Internet-Draft              RATS Arch & Terms                  June 2020
               Pei, M., Tschofenig, H., Thaler, D., and D. Wheeler,
               "Trusted Execution Environment Provisioning (TEEP)
               Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-teep-architecture-08, 4 April 2020,
+              ietf-teep-architecture-09, 12 June 2020,
               <http://www.ietf.org/internet-drafts/draft-ietf-teep-
-              architecture-08.txt>.
+              architecture-09.txt>.
 
    [OPCUA]    OPC Foundation, "OPC Unified Architecture Specification,
               Part 2: Security Model, Release 1.03", OPC 10000-2 , 25
@@ -1845,7 +1845,7 @@ Authors' Addresses
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 33]
+Birkholz, et al.        Expires 18 December 2020               [Page 33]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1901,4 +1901,4 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 34]
+Birkholz, et al.        Expires 18 December 2020               [Page 34]
