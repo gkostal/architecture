@@ -215,7 +215,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    Evidence:  A set of information about an Attester that is to be
       appraised by a Verifier
 
-   Relying Party:  An entity, that depends on the validity of
+   Relying Party:  A role performed by an entity, that depends on the
 
 
 
@@ -226,17 +226,17 @@ Birkholz, et al.        Expires 18 December 2020                [Page 4]
 Internet-Draft              RATS Arch & Terms                  June 2020
 
 
-      information about an Attester, for purposes of reliably applying
-      application specific actions.  Compare /relying party/ in
-      [RFC4949]
+      validity of information about an Attester, for purposes of
+      reliably applying application specific actions.  Compare /relying
+      party/ in [RFC4949]
 
    Relying Party Owner:  An entity (typically an administrator), that is
       authorized to configure Appraisal Policy for Attestation Results
       in a Relying Party
 
-   Verifier:  An entity that appraises the validity of Evidence about an
-      Attester and produces Attestation Results to be used by a Relying
-      Party
+   Verifier:  A role performed by an entity that appraises the validity
+      of Evidence about an Attester and produces Attestation Results to
+      be used by a Relying Party
 
    Verifier Owner:  An entity (typically an administrator), that is
       authorized to configure Appraisal Policy for Evidence in a
