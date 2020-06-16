@@ -90,7 +90,7 @@ Table of Contents
      3.4.  Critical Infrastructure Control . . . . . . . . . . . . .   6
      3.5.  Trusted Execution Environment (TEE) Provisioning  . . . .   7
      3.6.  Hardware Watchdog . . . . . . . . . . . . . . . . . . . .   7
-   4.  Architectural Overview  . . . . . . . . . . . . . . . . . . .   7
+   4.  Architectural Overview  . . . . . . . . . . . . . . . . . . .   8
      4.1.  Appraisal Policies  . . . . . . . . . . . . . . . . . . .   9
      4.2.  Two Types of Environments of an Attester  . . . . . . . .   9
      4.3.  Layered Attestation Environments  . . . . . . . . . . . .  10
@@ -171,10 +171,11 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
    Amongst other things, this document is about trust and
-   trustworthiness.  To trust is a decision that spans beyond the
-   technical assertions.  Trustworthiness is a quality that is assessed
-   via evidence.  This is a subtle difference and being familiar with
-   the difference is crucial for using this document.  Additionally, the
+   trustworthiness.  The decision to trust spans beyond technical
+   assertions to focus on trustworthiness as a quality of the computing
+   environment.  Trustworthiness is a quality that is assessed via
+   evidence.  This is a subtle difference and being familiar with the
+   difference is crucial for using this document.  Additionally, the
    concepts of freshness and trust relationships with respect to RATS
    are elaborated on to enable implementers in order to choose
    appropriate solutions to compose their Remote Attestation Procedures.
@@ -215,9 +216,8 @@ Internet-Draft              RATS Arch & Terms                  June 2020
       appraised by a Verifier
 
    Relying Party:  An entity, that depends on the validity of
-      information about an Attester, for purposes of reliably applying
-      application specific actions.  Compare /relying party/ in
-      [RFC4949]
+
+
 
 
 
@@ -225,6 +225,10 @@ Birkholz, et al.        Expires 18 December 2020                [Page 4]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
+
+      information about an Attester, for purposes of reliably applying
+      application specific actions.  Compare /relying party/ in
+      [RFC4949]
 
    Relying Party Owner:  An entity (typically an administrator), that is
       authorized to configure Appraisal Policy for Attestation Results
@@ -270,10 +274,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    that may be signed by the Root of Trust, considered as Evidence about
    the hardware, firmware, BIOS, software, etc. that is running.
 
-   Attester:  A device desiring access to a network
-
-   Relying Party:  A network infrastructure device such as a router,
-      switch, or access point
 
 
 
@@ -281,6 +281,11 @@ Birkholz, et al.        Expires 18 December 2020                [Page 5]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
+
+   Attester:  A device desiring access to a network
+
+   Relying Party:  A network infrastructure device such as a router,
+      switch, or access point
 
 3.2.  Confidential Machine Learning (ML) Model Protection
 
@@ -325,11 +330,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    can control such processes, and they are protected from malware or
    other adversaries.  When a protocol operation can affect some
    critical system, the device attached to the critical equipment thus
-   wants some assurance that the requester has not been compromised.  As
-   such, remote attestation can be used to only accept commands from
-   requesters that are within policy.
-
-   Attester:  A device or application wishing to control physical
 
 
 
@@ -338,6 +338,11 @@ Birkholz, et al.        Expires 18 December 2020                [Page 6]
 Internet-Draft              RATS Arch & Terms                  June 2020
 
 
+   wants some assurance that the requester has not been compromised.  As
+   such, remote attestation can be used to only accept commands from
+   requesters that are within policy.
+
+   Attester:  A device or application wishing to control physical
       equipment
 
    Relying Party:  A device or application connected to potentially
@@ -379,11 +384,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
       permission to continue operating (i.e., not reboot) for a period
       of time
 
-4.  Architectural Overview
-
-   Figure 1 depicts the data that flows between different roles,
-   independent of protocol or use case.
-
 
 
 
@@ -393,6 +393,11 @@ Birkholz, et al.        Expires 18 December 2020                [Page 7]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
+
+4.  Architectural Overview
+
+   Figure 1 depicts the data that flows between different roles,
+   independent of protocol or use case.
 
                  ************   ************     ****************
                  * Endorser *   * Verifier *     * Relying Party*
@@ -437,11 +442,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    authorization decisions.  The Attestation Result Appraisal Policy
    might, for example, be configured in the Relying Party by an
    administrator.
-
-
-
-
-
 
 
 
