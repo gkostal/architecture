@@ -197,7 +197,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
       including information about an Attester, where the Verifier
       vouches for the validity of the results
 
-   Attester:  a role performed by an entity (typically a device), whose
+   Attester:  A role performed by an entity (typically a device), whose
       Evidence must be appraised in order to infer the extent to which
       the Attester is considered trustworthy, such as when deciding
       whether it is authorized to perform some operation
