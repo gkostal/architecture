@@ -372,10 +372,13 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    This is a significant problem, because it allows a fleet of devices
    to be held hostage for ransom.
 
-   A hardware watchdog can be implemented by forcing a reboot unless
-   remote attestation to a server succeeds within a periodic interval,
-   and having the reboot do remediation by bringing a device into
-   compliance, including installation of patches as needed.
+   In the case, the Relying Party is the Watch Dog timer in the TPM/
+   secure enclave itself, as described in [TCGarch] section 43.3.  The
+   Attestation Results are returned to the device, and provided to the
+   enclave.
+
+   If the watch dog does not receive regular, and fresh, Attestation
+   Results as to the systems' health, then it forces a reboot.
 
    Attester:  The device that is desired to keep from being held hostage
       for a long period of time
@@ -383,9 +386,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    Relying Party:  A remote server that will securely grant the Attester
       permission to continue operating (i.e., not reboot) for a period
       of time
-
-
-
 
 
 
@@ -1819,6 +1819,11 @@ Internet-Draft              RATS Arch & Terms                  June 2020
               FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
               <https://www.rfc-editor.org/info/rfc4949>.
 
+   [TCGarch]  Trusted Computing Group, "Trusted Platform Module Library
+              - Part 1: Architecture", n.d.,
+              <https://trustedcomputinggroup.org/wp-content/uploads/
+              TCG_TPM2_r1p62_Part1_Architecture_7july2020.pdf>.
+
 Authors' Addresses
 
    Henk Birkholz
@@ -1837,17 +1842,19 @@ Authors' Addresses
    Email: dthaler@microsoft.com
 
 
-   Michael Richardson
-   Sandelman Software Works
-   Canada
-
-   Email: mcr+ietf@sandelman.ca
 
 
 
 Birkholz, et al.        Expires 25 December 2020               [Page 33]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
+
+
+   Michael Richardson
+   Sandelman Software Works
+   Canada
+
+   Email: mcr+ietf@sandelman.ca
 
 
    Ned Smith
@@ -1861,13 +1868,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    Huawei Technologies
 
    Email: william.panwei@huawei.com
-
-
-
-
-
-
-
 
 
 
