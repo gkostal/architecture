@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-06-23T22:00:37.698577+00:00",
+  "timestamp": "2020-06-24T14:49:34.910126+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -10746,13 +10746,13 @@
       "labels": [],
       "body": "This commit slightly changes the Freshness section to reflect the\r\noutcome of the discussion around PR #87.  (Hopefully I've managed to\r\ncapture the gist of Henk's thinking without disrupting too much the\r\nexisting flow.)\r\n\r\nTL;DR\r\n\r\nThe key change here is the removal of reply protection as a goal in\r\nitself.  The section now states clearly that the overall goal is instead\r\nthe identification of the point in time when attestation claims have\r\nbeen signed and/or generated so that a freshness policy can be applied.\r\nIn this perspective, the fundamental property provided by a nonce-based\r\nscheme with regards to freshness is its ability to lock the requester's\r\nclock to the underlying protocol transaction, thus indirectly\r\nestablishing the epoch of the attestation / verification event.  By\r\nmaking the nonce unique and non-predictable, the timeline locking cannot\r\nbe subverted, which provides anti-replay.  However, that is a nice\r\nside-effect rather than the primary goal.\r\n\r\nThis commit also adds some precision around the nonce and clock\r\nproperties - unpredictability and trustworthiness respectively.",
       "createdAt": "2020-06-01T16:05:24Z",
-      "updatedAt": "2020-06-23T10:15:20Z",
+      "updatedAt": "2020-06-24T14:48:41Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "c47c3538e39d8e4fef5311dd8b1eb912f05d57d8",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "thofos-freshness",
-      "headRefOid": "8232e0ad817fc6834ab5eebfe59f78fdf5bcc954",
+      "headRefOid": "ea485808293d5baa07b36f5603e17913b6d97c03",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -10797,37 +10797,37 @@
               "originalPosition": 48,
               "body": "I believe \"Evidence\" is slightly better than \"attributes\" (but I can live with it either way) since only the attributes that appear in Evidence are actually appraised.\r\n\r\nOn \"whether\" vs \"the extent to which\", I believe the latter is more correct since the former implies it's always exactly boolean, and the latter is more liberal in terms of how may different possibilities there are.",
               "createdAt": "2020-06-01T20:36:51Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 66,
               "body": "FYI I am ok either way, but I think \"another entity\" was previously changed to \"an Attester\" so not sure why reverting is being proposed in this PR but again I can live with it either way.",
               "createdAt": "2020-06-01T20:37:39Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 76,
               "body": "Why is this line removed?",
               "createdAt": "2020-06-01T20:38:43Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 93,
               "body": "We should not be adding FIXME comments into the doc at this point",
               "createdAt": "2020-06-01T20:39:04Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 115,
               "body": "I find the wording of \"--in itself-- is composed\" to be harder to read than the previous text",
               "createdAt": "2020-06-01T20:39:52Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 168,
               "body": "This seems to revert a bunch of changes we agreed to.   Maybe it needs a rebase or something?",
               "createdAt": "2020-06-01T20:40:35Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -10847,55 +10847,55 @@
               "originalPosition": 277,
               "body": "Please break lines into shorter source lines, like in the old text, to make diffs easier to review.",
               "createdAt": "2020-06-01T20:41:32Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 297,
               "body": "\"epoch of the validity-span\" is hard to parse and understand.  Can this be rephrased in layman's terms?",
               "createdAt": "2020-06-01T20:42:27Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 331,
               "body": "\"having Claim\" is bad grammar.\r\n\"having Claims\"?  \"having a Claim\"? \"having each Claim\"?\r\n\r\nBut which approach is the one where each Claim can be separately annotated with a timestamp?   In the original text with only two approaches, it would be part of this one.",
               "createdAt": "2020-06-01T20:43:41Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 339,
               "body": "For parity with previous subsection, this would then require adding text saying \"This typically requires additional claims about the Attester's timetick counter mechanism in order to provide such assurance.\"",
               "createdAt": "2020-06-01T20:46:19Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 342,
               "body": "I don't yet follow why the time interval since nonce was received is interesting for anything.  Explain, or provide a forward reference if it's later.",
               "createdAt": "2020-06-01T20:47:14Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 350,
               "body": "The term \"validity-span\" is not a normal term as far as I know",
               "createdAt": "2020-06-01T20:48:17Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 352,
               "body": "can't parse \"track is to avoid\"",
               "createdAt": "2020-06-01T20:48:47Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 344,
               "body": "I can't figure out how/why this is any different architecturally from nonces.  To me, the handle is just a nonce as far as I can tell from the below discussion.",
               "createdAt": "2020-06-01T20:49:53Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 366,
               "body": "I'm not sure I agree with this.  Shouldn't it be covered by the policy?  If an attester can only get a stale value and can't vouch for it not having been changed since, then putting that fact in the Evidence allows the verifier to make a decision appropriately.",
               "createdAt": "2020-06-01T20:51:13Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -10915,7 +10915,7 @@
               "originalPosition": 48,
               "body": "+1, I agree with Dave, there may be other intermediate situations between simple trust and non-trust.",
               "createdAt": "2020-06-02T02:26:33Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -10935,37 +10935,37 @@
               "originalPosition": 277,
               "body": "```suggestion\r\nIt is important to prevent old Evidence or old Attestation Results\r\nthat are no longer correct to be assessed as valid. Replay attacks\r\nare an important reason to do that. More importantly, the validity\r\nof Conceptual Messages, such as Evidence or Attestation Results,\r\nis the basis for trustworthy remote attestation procedures, in general.\r\n```",
               "createdAt": "2020-06-02T02:58:43Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 119,
               "body": "I feel that line 388 and 390 are duplicated.",
               "createdAt": "2020-06-02T03:04:13Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 283,
               "body": "```suggestion\r\nstate of the Attester, and/or the Appraisal Policy for Evidence,\r\n```",
               "createdAt": "2020-06-02T03:53:38Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 353,
               "body": "```suggestion\r\nDistributed handles are used in place of nonces for Evidence generation.\r\n```",
               "createdAt": "2020-06-02T07:15:48Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 344,
               "body": "It seems like that the handle is also a nonce, and the difference is that this nonce is from a third party (a centralized entity), not the Verifier or Relying Party.\r\nI'm afraid this approach is more complex because you need to consider the time sync among three entities. For example, the time of receiving the handle among different entities may be different, therefore the handle expired time will be different. If the handle on the Verifier expires earlier than the Attester, the handle may already be expired while Verifier receives the Evidence from Attester.",
               "createdAt": "2020-06-02T07:48:56Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 398,
               "body": "I think these new-added events had been questioned before, that the examples below don't use them.",
               "createdAt": "2020-06-02T07:57:02Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -10985,7 +10985,7 @@
               "originalPosition": 43,
               "body": "```suggestion\r\nThis is essential in deciding whether the included Claims and their values can be considered fresh, meaning they still reflect the latest state of the Attester, and that any Attestation Result was generated using the latest Appraisal Policy for Evidence.\r\n```",
               "createdAt": "2020-06-02T14:19:47Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11005,7 +11005,7 @@
               "originalPosition": 50,
               "body": "```suggestion\r\nFreshness is a key component  for enabling caching and reuse of both Evidence and Attestation Results, which is especially valuable in cases where their computation uses a substantial part of the resource budget (e.g., energy in constrained devices).\r\n```",
               "createdAt": "2020-06-02T14:21:36Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11025,7 +11025,7 @@
               "originalPosition": 57,
               "body": "```suggestion\r\nTimestamps can also be added on a per-Claim basis if wanted, to allow distinguishing the time of creation of Evidence from the time that a specific Claim value was generated.\r\n```",
               "createdAt": "2020-06-02T14:38:57Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11045,7 +11045,7 @@
               "originalPosition": 64,
               "body": "```suggestion\r\nIn this approach, a non-predictable nonce is sent by the remote entity, and the nonce is then signed and included along with the Claims in the Evidence or Attestation Result.\r\n```",
               "createdAt": "2020-06-02T14:46:37Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11065,7 +11065,7 @@
               "originalPosition": 65,
               "body": "```suggestion\r\nAfter the appraising entity checks that the sent and received nonces are the same, the appraising entity knows that the Claims were signed after the nonce was generated.\r\n```",
               "createdAt": "2020-06-02T14:47:28Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11085,7 +11085,7 @@
               "originalPosition": 70,
               "body": "```suggestion\r\n```",
               "createdAt": "2020-06-02T14:47:54Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11105,7 +11105,7 @@
               "originalPosition": 73,
               "body": "```suggestion\r\nFor example, if clocks exist and are considered trustworthy but are not synchronized, first a nonce-based exchange may be used to determine the (rough) time offset between the involved peers, followed by any number of timestamp based exchanges.\r\n```",
               "createdAt": "2020-06-02T14:49:16Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11125,7 +11125,7 @@
               "originalPosition": 62,
               "body": "```suggestion\r\nA second approach places the onus of timekeeping solely on the appraising entity (e.g., the Verifier for Evidence, or the Relying Party for an Attestation Result).\r\n```",
               "createdAt": "2020-06-02T14:49:27Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11145,7 +11145,7 @@
               "originalPosition": 64,
               "body": "```suggestion\r\nIn this approach, a non-predictable nonce is generated by the appraising entity, and the nonce is then signed and included along with the Claims in the Evidence or Attestation Result.\r\n```",
               "createdAt": "2020-06-02T14:49:51Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11165,7 +11165,7 @@
               "originalPosition": 65,
               "body": "```suggestion\r\nAfter checking the sent and received nonces are the same, the appraising entity knows that the Claims were signed after the nonce was generated, effectively locking its clock to the produced payload.\r\n```",
               "createdAt": "2020-06-02T14:50:07Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11185,7 +11185,7 @@
               "originalPosition": 65,
               "body": "```suggestion\r\nAfter checking the sent and received nonces are the same, the appraising entity knows that the Claims were signed after the nonce was generated.\r\n```",
               "createdAt": "2020-06-02T14:59:36Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11205,7 +11205,7 @@
               "originalPosition": 70,
               "body": "I don't think we should ditch this.\r\n\r\nThe essential premise is on [this line](https://github.com/ietf-rats-wg/architecture/pull/91/files#diff-29242c163e575f8093d7e76443c9d1d2R880). In particular, by using \"solely\" I wanted to discuss the case where the only clock that the appraiser can trust is its own.  The intent of the [following text](https://github.com/ietf-rats-wg/architecture/pull/91/files#diff-29242c163e575f8093d7e76443c9d1d2R882-R883) is just to illustrate two common instances where the appraiser can't rely on the peer's clock.\r\n\r\nThe overall premise for this whole paragraph is that appraiser does _not_ consider any time assertion made the peer, and to determine what kind of information can be used in this case to evaluate freshness.\r\n\r\nClearly, once the peer's clock becomes usable - as in [this example](https://github.com/ietf-rats-wg/architecture/pull/91/files#diff-29242c163e575f8093d7e76443c9d1d2R897-R899) - then finer-grained timestamping can become input to the evaluation of the freshness policy as well.\r\n\r\nHopefully I have made my intention clear and the ambiguities in the existing text can be fixed accordingly :-)",
               "createdAt": "2020-06-02T15:49:03Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11225,7 +11225,7 @@
               "originalPosition": 36,
               "body": "\"could not have\"",
               "createdAt": "2020-06-08T18:54:37Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11245,7 +11245,7 @@
               "originalPosition": 57,
               "body": "\"also\", \"if wanted\", \"of Evidence\", \"value\" are not needed.\r\n\"allow distinguishing\" change to \"distinguish\" ",
               "createdAt": "2020-06-08T19:00:50Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11265,55 +11265,55 @@
               "originalPosition": 58,
               "body": "\"The clock's trustworthiness\" - grammar.",
               "createdAt": "2020-06-08T19:01:56Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 62,
               "body": "\"the Verifier (for Evidence), or the Relying Party (for Attestation Results).\"",
               "createdAt": "2020-06-08T19:03:09Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 66,
               "body": "Replace \"This\" with \"Timekeeping\" ? ",
               "createdAt": "2020-06-08T19:07:12Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 69,
               "body": "* The epoch applies to the entire claim set instead of a more granular association, and",
               "createdAt": "2020-06-08T19:09:34Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 70,
               "body": "* The time between the creation of Claims and the collection of Claims is indistinguishable.",
               "createdAt": "2020-06-08T19:12:04Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 72,
               "body": "\"Implicit and explicit timekeeping can be combined into hybrid mechanisms.",
               "createdAt": "2020-06-08T19:14:58Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 74,
               "body": "\"Second, a broadcast channel shared by all Roles (Attester, Verifier, etc.), the nonce-based approach...\"",
               "createdAt": "2020-06-08T19:17:37Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 76,
               "body": "\"It is important...\"",
               "createdAt": "2020-06-08T19:18:16Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             },
             {
               "originalPosition": 78,
               "body": "This is not an example imo. \"For example, values generated at boot time might have been saved to secure storage until network connectivity is established to the remote Verifier and a nonce is obtained.\"",
               "createdAt": "2020-06-08T19:25:15Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11333,7 +11333,7 @@
               "originalPosition": 57,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:57:55Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11353,7 +11353,7 @@
               "originalPosition": 58,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:58:07Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11373,7 +11373,7 @@
               "originalPosition": 62,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:58:23Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11393,7 +11393,7 @@
               "originalPosition": 66,
               "body": "Not sure: \"this\" is a bit more than just \"timekeeping\", it refers to \"an approach that places the onus of timekeeping solely on the appraising entity\".",
               "createdAt": "2020-06-11T15:58:31Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11413,7 +11413,7 @@
               "originalPosition": 69,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:58:41Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11433,7 +11433,7 @@
               "originalPosition": 70,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:58:53Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11453,7 +11453,7 @@
               "originalPosition": 72,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:59:04Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11473,7 +11473,7 @@
               "originalPosition": 74,
               "body": "Not sure I understand this suggestion.  If the current text isn't good as-is, we may simplify it as \"When a broadcast channel is shared by all Roles, the nonce-base approach [...]\"",
               "createdAt": "2020-06-11T15:59:11Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11493,7 +11493,7 @@
               "originalPosition": 76,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:59:18Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11513,7 +11513,7 @@
               "originalPosition": 78,
               "body": "fixed in c215569",
               "createdAt": "2020-06-11T15:59:27Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11533,7 +11533,7 @@
               "originalPosition": 48,
               "body": "This change has been reverted.",
               "createdAt": "2020-06-11T16:27:37Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11553,7 +11553,7 @@
               "originalPosition": 66,
               "body": "This change has been reverted.",
               "createdAt": "2020-06-11T16:29:12Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11573,7 +11573,7 @@
               "originalPosition": 76,
               "body": "This change has been reverted.",
               "createdAt": "2020-06-11T16:29:43Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11593,7 +11593,7 @@
               "originalPosition": 93,
               "body": "This change has been reverted.",
               "createdAt": "2020-06-11T16:30:07Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11613,7 +11613,7 @@
               "originalPosition": 115,
               "body": "This change has been reverted.",
               "createdAt": "2020-06-11T16:30:38Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11633,7 +11633,7 @@
               "originalPosition": 168,
               "body": "Yes.  All of these changes have now been reverted.",
               "createdAt": "2020-06-11T16:31:15Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11653,7 +11653,7 @@
               "originalPosition": 297,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:33:49Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11673,7 +11673,7 @@
               "originalPosition": 331,
               "body": "This has been addressed using Ned's suggestion in c215569",
               "createdAt": "2020-06-11T16:35:35Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11693,7 +11693,7 @@
               "originalPosition": 339,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:36:21Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11713,7 +11713,7 @@
               "originalPosition": 342,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:36:53Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11733,7 +11733,7 @@
               "originalPosition": 350,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:37:06Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11753,7 +11753,7 @@
               "originalPosition": 352,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:37:22Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11773,7 +11773,7 @@
               "originalPosition": 344,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:37:47Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11793,7 +11793,7 @@
               "originalPosition": 277,
               "body": "This text doesn't exist anymore.",
               "createdAt": "2020-06-11T16:43:55Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11813,7 +11813,7 @@
               "originalPosition": 119,
               "body": "This has been reverted.",
               "createdAt": "2020-06-11T16:44:19Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11833,7 +11833,7 @@
               "originalPosition": 283,
               "body": "This text has been reverted.",
               "createdAt": "2020-06-11T16:45:11Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11853,7 +11853,7 @@
               "originalPosition": 353,
               "body": "This whole chunk of text is gone.",
               "createdAt": "2020-06-11T16:55:58Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11873,7 +11873,7 @@
               "originalPosition": 398,
               "body": "This chunk of text is gone.",
               "createdAt": "2020-06-11T16:56:51Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11893,7 +11893,7 @@
               "originalPosition": 64,
               "body": "Fixed in 34c9443",
               "createdAt": "2020-06-11T17:02:23Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11913,7 +11913,7 @@
               "originalPosition": 65,
               "body": "Fixed in 34c9443",
               "createdAt": "2020-06-11T17:02:41Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11933,7 +11933,7 @@
               "originalPosition": 65,
               "body": "Fixed in 35dc70a",
               "createdAt": "2020-06-11T17:07:08Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11953,7 +11953,7 @@
               "originalPosition": 36,
               "body": "Ned, you had another comment on this same sentence, which replaced it altogether.  Since your later suggestion has been already incorporated (c215569), I'm closing this.",
               "createdAt": "2020-06-11T17:10:09Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11973,7 +11973,7 @@
               "originalPosition": 277,
               "body": "Done in b0488b2 for the whole Freshness section.",
               "createdAt": "2020-06-11T17:13:01Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -11993,7 +11993,7 @@
               "originalPosition": 66,
               "body": "Maybe substitute your text in place of 'this' since the pronoun reference seems ambiguous?",
               "createdAt": "2020-06-11T18:44:14Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -12013,7 +12013,7 @@
               "originalPosition": 74,
               "body": "Trying to get the signposting to match up. In line 880 signposting uses \"first\" and in 881 signposting changes to \"another\". Normally, \"second\" follows \"first\" - it is just style and I don't feel strongly about it.",
               "createdAt": "2020-06-11T18:46:51Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -12033,7 +12033,7 @@
               "originalPosition": 74,
               "body": "Line 880 and 881 are two separate examples.\r\n\r\nThe example at line 880 is split in two phases: first [...], followed by [...].\r\n\r\nI will remove \"first\" since it isn't necessary and I suspect it's probably bad English if it got you confused.",
               "createdAt": "2020-06-11T21:06:35Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -12053,7 +12053,7 @@
               "originalPosition": 66,
               "body": "That seems a bit redundant.  I'd like to achieve some kind of compression - obviously without introducing ambiguity.  Let me see if I can concoct something decent.",
               "createdAt": "2020-06-11T21:06:39Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -12073,7 +12073,7 @@
               "originalPosition": 74,
               "body": "Ned: please check the proposal in 20e3d7b",
               "createdAt": "2020-06-11T21:18:34Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:40Z"
             }
           ]
         },
@@ -12093,7 +12093,7 @@
               "originalPosition": 66,
               "body": "Ned: please check the proposal in 20e3d7b",
               "createdAt": "2020-06-11T21:18:44Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             }
           ]
         },
@@ -12113,25 +12113,25 @@
               "originalPosition": 41,
               "body": "```suggestion\r\n(i.e., the \"epoch\") an Evidence or Attestation Result has been produced.  This\r\n```",
               "createdAt": "2020-06-23T03:29:37Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             },
             {
               "originalPosition": 54,
               "body": "```suggestion\r\nis willing to accept.  Freshness is a key component for enabling caching and\r\n```",
               "createdAt": "2020-06-23T03:47:47Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             },
             {
               "originalPosition": 67,
               "body": "Does 'the time of creation' mean the time of the creation of the Evidence or Attestation Result? More explicit would be better.",
               "createdAt": "2020-06-23T03:56:16Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             },
             {
               "originalPosition": 75,
               "body": "I think 'the Attester' here can't cover the case where the Relying Party sends the nonce to the Verifier for retrieving the Attestation Result. Maybe change 'the Attester' to 'the producing entity'?",
               "createdAt": "2020-06-23T04:05:56Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             }
           ]
         },
@@ -12151,7 +12151,7 @@
               "originalPosition": 67,
               "body": "> Does 'the time of creation' mean the time of the creation of the Evidence or Attestation Result?\r\n\r\nYes.\r\n\r\n> More explicit would be better.\r\n\r\nOK",
               "createdAt": "2020-06-23T09:08:48Z",
-              "updatedAt": "2020-06-23T09:12:28Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             }
           ]
         },
@@ -12171,7 +12171,7 @@
               "originalPosition": 67,
               "body": "fixed in 8232e0a",
               "createdAt": "2020-06-23T09:13:31Z",
-              "updatedAt": "2020-06-23T09:13:31Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             }
           ]
         },
@@ -12191,7 +12191,7 @@
               "originalPosition": 75,
               "body": "1. You are right in that it is not limited to the Attester.  I wanted to use the it as the typical example because it's more likely that a constrained Attester doesn't have a very reliable clock.  What about: `and might be suitable, for example, in case the Attester does not have [...]`?\r\n\r\n2. The current paragraph looks wrong to me.  When it says:\r\n```\r\n[...] solely on the appraising entity, e.g., the Verifier (for Evidence),\r\nor the Relying Party (for Attestation Results),`\r\n```\r\nshould instead say:\r\n```\r\n[...] solely on the remote attestation protocol initiator, e.g., the\r\nRelying Party (for Evidence or Attestation Results) and the Attester\r\n(for Attestation Results).\r\n```",
               "createdAt": "2020-06-23T10:15:20Z",
-              "updatedAt": "2020-06-23T10:15:20Z"
+              "updatedAt": "2020-06-24T14:48:41Z"
             }
           ]
         }
@@ -13259,6 +13259,77 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 108,
+      "id": "MDExOlB1bGxSZXF1ZXN0NDM4ODQ2Mjk1",
+      "title": "Rearrange text and clarify how attestation can be used to trust verifier",
+      "url": "https://github.com/ietf-rats-wg/architecture/pull/108",
+      "state": "OPEN",
+      "author": "dthaler",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Diffs look longer than they really are just because text was moved around due to the ordering point raised on the design team call.\r\n\r\nAlso, I found that \"Verifying Relying Party\" was used in this section without actually being defined so I defined it in context in that sentence (line 686).\r\n\r\nAlso added subsection headings for each role to make it easier to read and refer to.\r\n\r\nThe \"recursion\" aspect is dealt with by example in the new text starting at line 692, which was the simplest way I could find to do it, where I found that trying to use the term \"recurse\" or similar just made it harder for me to understand.  Other places just refer back to that example.\r\n\r\nSigned-off-by: Dave Thaler <dthaler@ntdev.microsoft.com>",
+      "createdAt": "2020-06-23T22:04:15Z",
+      "updatedAt": "2020-06-23T23:10:26Z",
+      "baseRepository": "ietf-rats-wg/architecture",
+      "baseRefName": "master",
+      "baseRefOid": "dcb418c7850dd2e6e70c760e31312018f0779262",
+      "headRepository": "ietf-rats-wg/architecture",
+      "headRefName": "trust",
+      "headRefOid": "fc67e09987d11cddb901feb827cea8cd8a6a9eed",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NDM2MjE4OTkz",
+          "commit": {
+            "abbreviatedOid": "fc67e09"
+          },
+          "author": "mcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I can live without the /, or having it be - or whatever.\r\n",
+          "createdAt": "2020-06-23T23:06:58Z",
+          "updatedAt": "2020-06-23T23:10:26Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "```suggestion\r\nmight implicitly trust a Verifier, such as in a Verifying/Relying Party \r\ncombination where a Verifier and a Relying Party are combined.\r\n```",
+              "createdAt": "2020-06-23T23:06:58Z",
+              "updatedAt": "2020-06-23T23:10:27Z"
+            },
+            {
+              "originalPosition": 19,
+              "body": "(I think that we should have a / or something in this new term)",
+              "createdAt": "2020-06-23T23:07:20Z",
+              "updatedAt": "2020-06-23T23:10:27Z"
+            },
+            {
+              "originalPosition": 35,
+              "body": "```suggestion\r\nwhere A acts as a Verifying/Relying Party.  If A then accepts B as\r\n```",
+              "createdAt": "2020-06-23T23:07:57Z",
+              "updatedAt": "2020-06-23T23:10:27Z"
+            },
+            {
+              "originalPosition": 50,
+              "body": "(as an aside: is there an architectural requirement on the Evidence container that PII be identified as such?)",
+              "createdAt": "2020-06-23T23:09:02Z",
+              "updatedAt": "2020-06-23T23:10:27Z"
+            },
+            {
+              "originalPosition": 57,
+              "body": "```suggestion\r\nAttester first act as a Verifying/Relying Party, and the Verifier act as its\r\n```",
+              "createdAt": "2020-06-23T23:09:39Z",
+              "updatedAt": "2020-06-23T23:10:27Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
