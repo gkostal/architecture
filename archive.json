@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-06-24T14:49:34.910126+00:00",
+  "timestamp": "2020-06-26T14:03:15.181725+00:00",
   "repo": "ietf-rats-wg/architecture",
   "labels": [
     {
@@ -9953,13 +9953,13 @@
       "labels": [],
       "body": "only the most essential items:\r\n* added three more timestamp types based on TUDA, trying to generalize it a bit\r\n* added a few periods to text that seems to express sentences",
       "createdAt": "2020-05-12T13:56:46Z",
-      "updatedAt": "2020-06-11T17:30:25Z",
+      "updatedAt": "2020-06-26T14:02:51Z",
       "baseRepository": "ietf-rats-wg/architecture",
       "baseRefName": "master",
       "baseRefOid": "2a8eec68b3de946ddb8840f1776c54cd72646c96",
       "headRepository": "ietf-rats-wg/architecture",
       "headRefName": "more-time-considerations",
-      "headRefOid": "8974ee43d0b2a6b8c7dee138f75ad6b4cf8717e7",
+      "headRefOid": "1f9db85a94f9b45c32f6dede8cb73505a8582c15",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -9982,7 +9982,7 @@
               "originalPosition": 29,
               "body": "Duplicate \"examples\".\r\n\r\n(I really prefer how it read before.)",
               "createdAt": "2020-05-12T15:06:22Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10002,7 +10002,7 @@
               "originalPosition": 29,
               "body": "Yes. Redundant \"example\" is redundant. Alas, we cannot start standards text with \"We now walk\". The alternate text was written too hastily be me.",
               "createdAt": "2020-05-12T15:18:45Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10022,7 +10022,7 @@
               "originalPosition": 13,
               "body": "This ID is never used in later sections, so should not be added unless it is used in the doc.",
               "createdAt": "2020-05-19T01:13:26Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10042,7 +10042,7 @@
               "originalPosition": 13,
               "body": "Which ID do you mean here, exactly? It is had to read from the diff illustrated, I think.",
               "createdAt": "2020-05-19T10:31:42Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10062,7 +10062,7 @@
               "originalPosition": 29,
               "body": "Maybe we can say:\r\nUsing the table above, a number of hypothetical examples of how a solution might be built are illustrated below.",
               "createdAt": "2020-05-19T11:34:26Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10082,7 +10082,7 @@
               "originalPosition": 13,
               "body": "I think Dave's meaning is that the newly added 3 events (AA, CC, and HD) are not used in later sections.",
               "createdAt": "2020-05-19T11:37:18Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10102,7 +10102,7 @@
               "originalPosition": 13,
               "body": "ah okay. Thx Wei. I created  a commit (https://github.com/ietf-rats-wg/architecture/commit/620ef97792096ab82df628f028b5c58c0ddbb4bc) based on that identified gap.",
               "createdAt": "2020-05-19T12:37:49Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10122,7 +10122,7 @@
               "originalPosition": 29,
               "body": "Fine with me. Thx! Objections or request for polish?",
               "createdAt": "2020-05-19T12:39:31Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10142,7 +10142,7 @@
               "originalPosition": 29,
               "body": "```suggestion\r\nUsing the table above, a number of hypothetical examples of how a solution might be built are illustrated below.\r\n```",
               "createdAt": "2020-05-21T22:26:48Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10162,13 +10162,13 @@
               "originalPosition": 65,
               "body": "time(AA) seems to be irrelevant for any security purpose, only time(EG) is relevant, so I don't think time(AA) belongs in this doc.\r\n\r\ntime(HD) also seems very confusing.   since time(HD) and time(EG) are on the same entity, and that same entity compares against a threshold, what security threat is this trying to address?  I don't follow.",
               "createdAt": "2020-05-26T04:36:04Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             },
             {
               "originalPosition": 63,
               "body": "there is no time(CC) in the diagram, but I think time(CC) is irrelevant for any security purpose, only time(EG) matters and time(CC) can be ignored",
               "createdAt": "2020-05-26T04:38:34Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10188,7 +10188,7 @@
               "originalPosition": 65,
               "body": "In order to always create the most recent Evdence possible, the Attester has to be aware of a changed Value as soon as possible. Otherwise Evidence is outdated and could even convey a misleading picture about an Attester's Target Environments, ultimately leading to incorrect risk assessments. Hence time(AA) is quite relevant, I think. \r\n\r\nThere are scenarios where this is less relevant (e.g. boot-time integrity) and some scenarios where this is more relevant (e.g. run-time integrity).\r\n\r\nI agree that time(HD) is \"squeezed\" into the diagram it is actually the reception of the distributed handles. I did not want to add a \"distributor of the handles\" the the actors in the diagram. Maybe we can address this by rewording time(HD) correspondingly? In essence, I understand why this is difficult to follow at the moment and we have to fix this.",
               "createdAt": "2020-05-26T09:52:25Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10208,7 +10208,7 @@
               "originalPosition": 63,
               "body": "I think that we can actually skip time(CC). It seemed important to various people, but I can see how you can work around that just with time(AA) and time(EG). Other thoughts?",
               "createdAt": "2020-05-26T09:53:58Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         },
@@ -10228,7 +10228,7 @@
               "originalPosition": 65,
               "body": "Agreed that \"HD\" is not a good term, but a better term will be worked on.\r\n",
               "createdAt": "2020-05-26T14:54:59Z",
-              "updatedAt": "2020-06-11T17:30:25Z"
+              "updatedAt": "2020-06-26T14:02:51Z"
             }
           ]
         }
