@@ -1357,16 +1357,16 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
    A second approach places the onus of timekeeping solely on the
    appraising entity, e.g., the Verifier (for Evidence), or the Relying
-   Party (for Attestation Results), and might be suitable in case the
-   Attester does not have a reliable clock or time synchronisation is
-   otherwise impaired.  In this approach, a non-predictable nonce is
-   sent by the appraising entity, and the nonce is then signed and
-   included along with the Claims in the Evidence or Attestation Result.
-   After checking that the sent and received nonces are the same, the
-   appraising entity knows that the Claims were signed after the nonce
-   was generated.  This allows associating a "rough" epoch to the
-   Evidence or Attestation Result.  In this case the epoch is said to be
-   rough because:
+   Party (for Attestation Results), and might be suitable, for example,
+   in case the Attester does not have a reliable clock or time
+   synchronisation is otherwise impaired.  In this approach, a non-
+   predictable nonce is sent by the appraising entity, and the nonce is
+   then signed and included along with the Claims in the Evidence or
+   Attestation Result.  After checking that the sent and received nonces
+   are the same, the appraising entity knows that the Claims were signed
+   after the nonce was generated.  This allows associating a "rough"
+   epoch to the Evidence or Attestation Result.  In this case the epoch
+   is said to be rough because:
 
    *  The epoch applies to the entire claim set instead of a more
       granular association, and
