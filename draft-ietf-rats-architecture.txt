@@ -121,15 +121,15 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    14. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  26
    15. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  27
    16. Appendix A: Time Considerations . . . . . . . . . . . . . . .  27
-     16.1.  Example 1: Timestamp-based Passport Model Example  . . .  29
+     16.1.  Example 1: Timestamp-based Passport Model Example  . . .  28
      16.2.  Example 2: Nonce-based Passport Model Example  . . . . .  30
      16.3.  Example 3: Timestamp-based Background-Check Model
             Example  . . . . . . . . . . . . . . . . . . . . . . . .  31
-     16.4.  Example 4: Nonce-based Background-Check Model Example  .  31
-   17. References  . . . . . . . . . . . . . . . . . . . . . . . . .  32
-     17.1.  Normative References . . . . . . . . . . . . . . . . . .  32
-     17.2.  Informative References . . . . . . . . . . . . . . . . .  32
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  33
+     16.4.  Example 4: Nonce-based Background-Check Model Example  .  32
+   17. References  . . . . . . . . . . . . . . . . . . . . . . . . .  33
+     17.1.  Normative References . . . . . . . . . . . . . . . . . .  33
+     17.2.  Informative References . . . . . . . . . . . . . . . . .  33
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  34
 
 1.  Introduction
 
@@ -1476,36 +1476,36 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    Universal Time, or might be defined relative to some other timestamp
    or timeticks counter.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   +----+--------------+-----------------------------------------------+
+   | ID | Event        | Explanation of event                          |
+   +====+==============+===============================================+
+   | VG | Value        | A value to appear in a Claim was              |
+   |    | generation   | created.                                      |
+   +----+--------------+-----------------------------------------------+
+   | AA | Attester     | An Attesting Environment starts to be         |
+   |    | awareness    | aware of a new/changed Claim value.           |
+   +----+--------------+-----------------------------------------------+
+   | CC | Claim        | An Attesting Environment collects a new/      |
+   |    | Collection   | changed Claim value to appear in              |
+   |    |              | Evidence.                                     |
+   +----+--------------+-----------------------------------------------+
+   | HD | Handle       | A centrally generated identifier for          |
+   |    | distribution | time-bound recentness across a domain of      |
+   |    |              | devices is successfully distributed to        |
+   |    |              | Attesters.                                    |
+   +----+--------------+-----------------------------------------------+
+   | NS | Nonce sent   | A nonce not predictable to an Attester        |
+   |    |              | (recentness & uniqueness) is sent to an       |
+   |    |              | Attester.                                     |
+   +----+--------------+-----------------------------------------------+
+   | NR | Nonce        | A nonce is relayed to an Attester by          |
+   |    | relayed      | another entity.                               |
+   +----+--------------+-----------------------------------------------+
+   | EG | Evidence     | An Attester creates Evidence from             |
+   |    | generation   | collected Claims (CC).                        |
+   +----+--------------+-----------------------------------------------+
+   | ER | Evidence     | A Relying Party relays Evidence to a          |
+   |    | relayed      | Verifier.                                     |
 
 
 
@@ -1514,49 +1514,49 @@ Birkholz, et al.        Expires 28 December 2020               [Page 27]
 Internet-Draft              RATS Arch & Terms                  June 2020
 
 
-    +----+------------+-----------------------------------------------+
-    | ID | Event      | Explanation of event                          |
-    +====+============+===============================================+
-    | VG | Value      | A value to appear in a claim was created      |
-    |    | generation |                                               |
-    +----+------------+-----------------------------------------------+
-    | NS | Nonce sent | A random number not predictable to an         |
-    |    |            | Attester is sent                              |
-    +----+------------+-----------------------------------------------+
-    | NR | Nonce      | The nonce is relayed to an Attester by        |
-    |    | relayed    | enother entity                                |
-    +----+------------+-----------------------------------------------+
-    | EG | Evidence   | An Attester collects claims and generates     |
-    |    | generation | Evidence                                      |
-    +----+------------+-----------------------------------------------+
-    | ER | Evidence   | A Relying Party relays Evidence to a Verifier |
-    |    | relayed    |                                               |
-    +----+------------+-----------------------------------------------+
-    | RG | Result     | A Verifier appraises Evidence and generates   |
-    |    | generation | an Attestation Result                         |
-    +----+------------+-----------------------------------------------+
-    | RR | Result     | A Relying Party relays an Attestation Result  |
-    |    | relayed    | to a Relying Party                            |
-    +----+------------+-----------------------------------------------+
-    | RA | Result     | The Relying Party appraises Attestation       |
-    |    | appraised  | Results                                       |
-    +----+------------+-----------------------------------------------+
-    | OP | Operation  | The Relying Party performs some operation     |
-    |    | performed  | requested by the Attester.  For example,      |
-    |    |            | acting upon some message just received across |
-    |    |            | a session created earlier at time(RA).        |
-    +----+------------+-----------------------------------------------+
-    | RX | Result     | An Attestation Result should no longer be     |
-    |    | expiry     | accepted, according to the Verifier that      |
-    |    |            | generated it                                  |
-    +----+------------+-----------------------------------------------+
+   +----+--------------+-----------------------------------------------+
+   | RG | Result       | A Verifier appraises Evidence and             |
+   |    | generation   | generates an Attestation Result.              |
+   +----+--------------+-----------------------------------------------+
+   | RP | Result push  | A set of one or more Evidence bundles is      |
+   |    |              | conveyed to a Verifier with or without        |
+   |    |              | solicitation initially triggered by AA,       |
+   |    |              | in a periodic interval, or ad-hoc.            |
+   +----+--------------+-----------------------------------------------+
+   | RR | Result       | A Relying Party relays an Attestation         |
+   |    | relayed      | Result to a Relying Party.                    |
+   +----+--------------+-----------------------------------------------+
+   | RA | Result       | The Relying Party appraises Attestation       |
+   |    | appraised    | Results.                                      |
+   +----+--------------+-----------------------------------------------+
+   | OP | Operation    | The Relying Party performs some               |
+   |    | performed    | operation requested by the Attester.          |
+   |    |              | For example, acting upon some message         |
+   |    |              | just received across a session created        |
+   |    |              | earlier at time(RA).                          |
+   +----+--------------+-----------------------------------------------+
+   | RX | Result       | An Attestation Result should no longer        |
+   |    | expiry       | be accepted, according to the Verifier        |
+   |    |              | that generated it.                            |
+   +----+--------------+-----------------------------------------------+
 
                                   Table 1
 
-   We now walk through a number of hypothetical examples of how a
-   solution might be built.  This list is not intended to be complete,
-   but is just representative enough to highlight various timing
-   considerations.
+   Using the table above, a number of hypothetical examples of how a
+   solution might be built are illustrated below. a solution might be
+   built.  This list is not intended to be complete, but is just
+   representative enough to highlight various timing considerations.
+
+16.1.  Example 1: Timestamp-based Passport Model Example
+
+   The following example illustrates a hypothetical Passport Model
+   solution that uses timestamps and requires roughly synchronized
+   clocks between the Attester, Verifier, and Relying Party, which
+   depends on using a secure clock synchronization mechanism.
+
+
+
+
 
 
 
@@ -1569,13 +1569,6 @@ Birkholz, et al.        Expires 28 December 2020               [Page 28]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
-
-16.1.  Example 1: Timestamp-based Passport Model Example
-
-   The following example illustrates a hypothetical Passport Model
-   solution that uses timestamps and requires roughly synchronized
-   clocks between the Attester, Verifier, and Relying Party, which
-   depends on using a secure clock synchronization mechanism.
 
       .----------.                     .----------.  .---------------.
       | Attester |                     | Verifier |  | Relying Party |
@@ -1618,6 +1611,13 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    (e.g., throughout the lifetime of a connection established at
    time(RA)).  The Relying Party must be careful, however, to not allow
    continued use beyond the period for which it deems the Attestation
+   Result to remain fresh enough.  Thus, it might allow use (at
+   time(OP)) as long as "time(OP) - time(RG) < Threshold".  However, if
+   the Attestation Result contains an expiry time time(RX) then it could
+   explicitly check "time(OP) < time(RX)".
+
+
+
 
 
 
@@ -1625,11 +1625,6 @@ Birkholz, et al.        Expires 28 December 2020               [Page 29]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
-
-   Result to remain fresh enough.  Thus, it might allow use (at
-   time(OP)) as long as "time(OP) - time(RG) < Threshold".  However, if
-   the Attestation Result contains an expiry time time(RX) then it could
-   explicitly check "time(OP) < time(RX)".
 
 16.2.  Example 2: Nonce-based Passport Model Example
 
@@ -1677,6 +1672,11 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
+
+
+
+
+
 Birkholz, et al.        Expires 28 December 2020               [Page 30]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
@@ -1700,15 +1700,25 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 16.3.  Example 3: Timestamp-based Background-Check Model Example
 
    The following example illustrates a hypothetical Background-Check
-   Model solution that uses timestamps and requires roughly synchronized
-   clocks between the Attester, Verifier, and Relying Party.
+   Model solution that uses centrally generated identifiers for explicit
+   time-keeping (referred to as "handle" in this example).  Handles can
+   be qualifying data, such as nonces or signed timestamps.  In this
+   example, centrally generated signed timestamps and - and synchronized
+   clocks between all entities - are distributed in periodic intervals
+   as handles.  If the Attester lacks a source of time based on an
+   absolute timescale, a relative source of time, such as a tick counter
+   can be used, alternatively.  In this example, evidence generation is
+   not triggered at value generation, but at events at which the
+   Attesting Environment becomes of changes to the Target Environment.
 
    .----------.         .---------------.              .----------.
    | Attester |         | Relying Party |              | Verifier |
    '----------'         '---------------'              '----------'
      time(VG)                   |                           |
            |                    |                           |
-           ~                    ~                           ~
+        ---+----time(HD)--------+------time(HD))------------+---
+           |                    |                           |
+     time(AA)                   |                           |
            |                    |                           |
      time(EG)                   |                           |
            |----Evidence------->|                           |
@@ -1720,8 +1730,47 @@ Internet-Draft              RATS Arch & Terms                  June 2020
            |                    |                           |
            |                 time(OP)                       |
 
-   The time considerations in this example are equivalent to those
-   discussed under Example 1 above.
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 31]
+
+Internet-Draft              RATS Arch & Terms                  June 2020
+
+
+   In comparison with example 1, the time considerations in this example
+   go into more detail with respect to the life-cycle of Claims and
+   Evidence.  While the goal is to create up-to-date and recent Evidence
+   as soon as possible, typically there is a latency between value
+   generation and Attester awareness.
+
+   At time(AA) the Attesting Environment is able to trigger an event
+   (e.g. based on an Event-Condition-Action model) to create attestation
+   Evidence that is as recent as possible.  In essence, at time(AA) the
+   Attesting Environment is aware of new values that where generated at
+   time(VG) and corresponding Claim values are collected immediately.
+   Consecutively, Evidence based on relevant "old" Claims and the just
+   collected "new" Claims is generated at time(EG).  In essence, the
+   Claims used to generate the Evidence are generated at various
+   time(VG) before time(AA).
+
+   In order to create attestation Evidence at at time(AA), the Attester
+   requires a fresh (i.e. not expired) centrally generated handle that
+   has been distributed to all involved entities.
+
+   In general, The duration a handle remains fresh depends on the
+   content-type of the handle.  If it is a (relative or absolute)
+   timestamp, clocks synchronized with a shared and trustworthy source
+   of time are required.  If another value type is used as a handle, the
+   reception time of the handle time(HD) provides an epoch (relative
+   time of zero) for measuring the duration of validity (similar to a
+   heart-beat timeout).  From the point of view of a Verifier, validity
+   of Evidence is only given if the handle used in Evidence satisfies
+   delta(time(HD),time(EG))distribution-interval.
+
+   In this usage scenario, time(VG), time(AA), and time(EG) are tightly
+   coupled.  Also, the absolute point in time at which a handle is
+   received by all three entities is assumed to be close to identical.
 
 16.4.  Example 4: Nonce-based Background-Check Model Example
 
@@ -1733,7 +1782,14 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 28 December 2020               [Page 31]
+
+
+
+
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 32]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1789,7 +1845,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 28 December 2020               [Page 32]
+Birkholz, et al.        Expires 28 December 2020               [Page 33]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1845,7 +1901,7 @@ Authors' Addresses
 
 
 
-Birkholz, et al.        Expires 28 December 2020               [Page 33]
+Birkholz, et al.        Expires 28 December 2020               [Page 34]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1901,4 +1957,4 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 28 December 2020               [Page 34]
+Birkholz, et al.        Expires 28 December 2020               [Page 35]
