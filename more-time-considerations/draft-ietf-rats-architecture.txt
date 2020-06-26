@@ -5,14 +5,14 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 13 December 2020                                      Microsoft
+Expires: 28 December 2020                                      Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
                                                                   W. Pan
                                                      Huawei Technologies
-                                                            11 June 2020
+                                                            26 June 2020
 
 
                Remote Attestation Procedures Architecture
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 1]
+Birkholz, et al.        Expires 28 December 2020                [Page 1]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -63,7 +63,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 December 2020.
+   This Internet-Draft will expire on 28 December 2020.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 2]
+Birkholz, et al.        Expires 28 December 2020                [Page 2]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -124,10 +124,10 @@ Internet-Draft              RATS Arch & Terms                  June 2020
      15.2.  Example 2: Nonce-based Passport Model Example  . . . . .  29
      15.3.  Example 3: Timestamp-based Background-Check Model
             Example  . . . . . . . . . . . . . . . . . . . . . . . .  30
-     15.4.  Example 4: Nonce-based Background-Check Model Example  .  32
-   16. References  . . . . . . . . . . . . . . . . . . . . . . . . .  33
-     16.1.  Normative References . . . . . . . . . . . . . . . . . .  33
-     16.2.  Informative References . . . . . . . . . . . . . . . . .  33
+     15.4.  Example 4: Nonce-based Background-Check Model Example  .  31
+   16. References  . . . . . . . . . . . . . . . . . . . . . . . . .  32
+     16.1.  Normative References . . . . . . . . . . . . . . . . . .  32
+     16.2.  Informative References . . . . . . . . . . . . . . . . .  32
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  33
 
 1.  Introduction
@@ -165,7 +165,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 3]
+Birkholz, et al.        Expires 28 December 2020                [Page 3]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -221,7 +221,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 4]
+Birkholz, et al.        Expires 28 December 2020                [Page 4]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -277,7 +277,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 5]
+Birkholz, et al.        Expires 28 December 2020                [Page 5]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -333,7 +333,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 6]
+Birkholz, et al.        Expires 28 December 2020                [Page 6]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -389,7 +389,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 7]
+Birkholz, et al.        Expires 28 December 2020                [Page 7]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -445,7 +445,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 8]
+Birkholz, et al.        Expires 28 December 2020                [Page 8]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -501,7 +501,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020                [Page 9]
+Birkholz, et al.        Expires 28 December 2020                [Page 9]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -557,7 +557,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 10]
+Birkholz, et al.        Expires 28 December 2020               [Page 10]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -613,7 +613,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 11]
+Birkholz, et al.        Expires 28 December 2020               [Page 11]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -669,7 +669,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 12]
+Birkholz, et al.        Expires 28 December 2020               [Page 12]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -725,7 +725,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 13]
+Birkholz, et al.        Expires 28 December 2020               [Page 13]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -781,7 +781,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 14]
+Birkholz, et al.        Expires 28 December 2020               [Page 14]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -837,7 +837,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 15]
+Birkholz, et al.        Expires 28 December 2020               [Page 15]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -893,7 +893,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 16]
+Birkholz, et al.        Expires 28 December 2020               [Page 16]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -949,7 +949,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 17]
+Birkholz, et al.        Expires 28 December 2020               [Page 17]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1005,7 +1005,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 18]
+Birkholz, et al.        Expires 28 December 2020               [Page 18]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1061,7 +1061,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 19]
+Birkholz, et al.        Expires 28 December 2020               [Page 19]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1117,7 +1117,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 20]
+Birkholz, et al.        Expires 28 December 2020               [Page 20]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1173,7 +1173,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 21]
+Birkholz, et al.        Expires 28 December 2020               [Page 21]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1229,7 +1229,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 22]
+Birkholz, et al.        Expires 28 December 2020               [Page 22]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1285,7 +1285,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 23]
+Birkholz, et al.        Expires 28 December 2020               [Page 23]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1341,7 +1341,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 24]
+Birkholz, et al.        Expires 28 December 2020               [Page 24]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1397,7 +1397,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 25]
+Birkholz, et al.        Expires 28 December 2020               [Page 25]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1453,7 +1453,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 26]
+Birkholz, et al.        Expires 28 December 2020               [Page 26]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1509,7 +1509,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 27]
+Birkholz, et al.        Expires 28 December 2020               [Page 27]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1565,7 +1565,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 28]
+Birkholz, et al.        Expires 28 December 2020               [Page 28]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1621,7 +1621,7 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 29]
+Birkholz, et al.        Expires 28 December 2020               [Page 29]
 
 Internet-Draft              RATS Arch & Terms                  June 2020
 
@@ -1644,49 +1644,20 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 15.3.  Example 3: Timestamp-based Background-Check Model Example
 
    The following example illustrates a hypothetical Background-Check
-   Model solution that uses centrally generated identifiers for time-
-   bound recentness (referred to as "handle" in this example).  This
-   example can either use centrally generated signed timestamps and -
-   and thereby require synchronized clocks between the Attester,
-   Verifier, and Relying Party - or other centrally generated
-   identifiers that are distributed in periodic intervals as handles.
-   The latter option does not require require synchronized clocks.  The
-   Attester can also create a relative timestamp if it lacks a reliable
-   source of absolute time.  This may take the form of time elapsed
-   since a certain event (e.g. completion of the last secure boot
-   operation).  The reference event would initiate the timeline.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.        Expires 13 December 2020               [Page 30]
-
-Internet-Draft              RATS Arch & Terms                  June 2020
-
+   Model solution that uses centrally generated identifiers for explicit
+   time-keeping (referred to as "handle" in this example).  Handles can
+   be qualifying data, such as nonces or signed timestamps.  In this
+   example, centrally generated signed timestamps and - and synchronized
+   clocks between all entities - are distributed in periodic intervals
+   as handles.  If the Attester lacks a source of time based on an
+   absolute timescale, a relative source of time, such as a tick counter
+   can be used, alternatively.  In this example, evidence generation is
+   not triggered at value generation, but at events at which the
+   Attesting Environment becomes of changes to the Target Environment.
 
    .----------.         .---------------.              .----------.
    | Attester |         | Relying Party |              | Verifier |
    '----------'         '---------------'              '----------'
-     time(TI)                   |                           |
-           |                    |                           |
      time(VG)                   |                           |
            |                    |                           |
         ---+----time(HD)--------+------time(HD))------------+---
@@ -1703,43 +1674,42 @@ Internet-Draft              RATS Arch & Terms                  June 2020
            |                    |                           |
            |                 time(OP)                       |
 
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 30]
+
+Internet-Draft              RATS Arch & Terms                  June 2020
+
+
    In comparison with example 1, the time considerations in this example
    go into more detail with respect to the life-cycle of Claims and
-   Evidence.  The goal is to create up-to-date and recent Evidence as
-   soon as possible.
+   Evidence.  While the goal is to create up-to-date and recent Evidence
+   as soon as possible, typically there is a latency between value
+   generation and Attester awareness.
 
    At time(AA) the Attesting Environment is able to trigger an event
    (e.g. based on an Event-Condition-Action model) to create attestation
    Evidence that is as recent as possible.  In essence, at time(AA) the
    Attesting Environment is aware of new values that where generated at
    time(VG) and corresponding Claim values are collected immediately.
-   Consecutively, evidence based on relevant "old" Claims and the just
-   collected "new" Claims is generated at time(EG).
+   Consecutively, Evidence based on relevant "old" Claims and the just
+   collected "new" Claims is generated at time(EG).  In essence, the
+   Claims used to generate the Evidence are generated at various
+   time(VG) before time(AA).
 
    In order to create attestation Evidence at at time(AA), the Attester
-   requires a fresh (i.e. not expired) centrally generated identifier
-   that also has been distributed to the Verifiers that are going to
-   appraise the Evidence.  Corresponding identifiers could be composed
-   of signed timestamps [I-D.birkholz-rats-tuda] or other non-repeating
-   values, for example, relative - with respect to time(TI) - tick-
-   counters that reset on restart of a device can also be used.
+   requires a fresh (i.e. not expired) centrally generated handle that
+   has been distributed to all involved entities.
 
-   The duration of a handle remains fresh used depends on the content-
-   type of the handle.  If it is a (relative or absolute) timestamp,
-   clocks synchronized with a shared and trustworthy source of time are
-   required.  If another value type is used as a handle, the reception
-   time of the handle time(HD) provides an epoch (relative time of zero)
-   for measuring the duration of validity (similar to a heart-beat
-
-
-
-Birkholz, et al.        Expires 13 December 2020               [Page 31]
-
-Internet-Draft              RATS Arch & Terms                  June 2020
-
-
-   timeout).  From the point of view of a Verifier, validity of Evidence
-   is only given if the handle used in Evidence satisfies
+   In general, The duration a handle remains fresh depends on the
+   content-type of the handle.  If it is a (relative or absolute)
+   timestamp, clocks synchronized with a shared and trustworthy source
+   of time are required.  If another value type is used as a handle, the
+   reception time of the handle time(HD) provides an epoch (relative
+   time of zero) for measuring the duration of validity (similar to a
+   heart-beat timeout).  From the point of view of a Verifier, validity
+   of Evidence is only given if the handle used in Evidence satisfies
    delta(time(HD),time(EG))distribution-interval.
 
    In this usage scenario, time(VG), time(AA), and time(EG) are tightly
@@ -1753,6 +1723,20 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    clocks are synchronized.  In this example solution, a nonce is
    generated by a Verifier at the request of a Relying Party, when the
    Relying Party needs to send one to an Attester.
+
+
+
+
+
+
+
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 31]
+
+Internet-Draft              RATS Arch & Terms                  June 2020
+
 
    .----------.         .---------------.              .----------.
    | Attester |         | Relying Party |              | Verifier |
@@ -1786,14 +1770,6 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    validity lifetime in terms of time(RX)-time(RG), then the Relying
    Party can check "time(OP) - time(ER) < time(RX)-time(RG)".
 
-
-
-
-Birkholz, et al.        Expires 13 December 2020               [Page 32]
-
-Internet-Draft              RATS Arch & Terms                  June 2020
-
-
 16.  References
 
 16.1.  Normative References
@@ -1808,6 +1784,16 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 16.2.  Informative References
 
+
+
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 32]
+
+Internet-Draft              RATS Arch & Terms                  June 2020
+
+
    [I-D.birkholz-rats-tuda]
               Fuchs, A., Birkholz, H., McDonald, I., and C. Bormann,
               "Time-Based Uni-Directional Attestation", Work in
@@ -1819,9 +1805,9 @@ Internet-Draft              RATS Arch & Terms                  June 2020
               Pei, M., Tschofenig, H., Thaler, D., and D. Wheeler,
               "Trusted Execution Environment Provisioning (TEEP)
               Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-teep-architecture-08, 4 April 2020,
+              ietf-teep-architecture-10, 19 June 2020,
               <http://www.ietf.org/internet-drafts/draft-ietf-teep-
-              architecture-08.txt>.
+              architecture-10.txt>.
 
    [OPCUA]    OPC Foundation, "OPC Unified Architecture Specification,
               Part 2: Security Model, Release 1.03", OPC 10000-2 , 25
@@ -1844,12 +1830,6 @@ Authors' Addresses
    Email: henk.birkholz@sit.fraunhofer.de
 
 
-
-Birkholz, et al.        Expires 13 December 2020               [Page 33]
-
-Internet-Draft              RATS Arch & Terms                  June 2020
-
-
    Dave Thaler
    Microsoft
    United States of America
@@ -1862,6 +1842,12 @@ Internet-Draft              RATS Arch & Terms                  June 2020
    Canada
 
    Email: mcr+ietf@sandelman.ca
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 33]
+
+Internet-Draft              RATS Arch & Terms                  June 2020
 
 
    Ned Smith
@@ -1901,4 +1887,18 @@ Internet-Draft              RATS Arch & Terms                  June 2020
 
 
 
-Birkholz, et al.        Expires 13 December 2020               [Page 34]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Birkholz, et al.        Expires 28 December 2020               [Page 34]
